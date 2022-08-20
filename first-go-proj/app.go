@@ -1,16 +1,10 @@
 package main
 
-import (
-	"log"
-	"net/http"
-)
-
-func Handler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello, world!\n"))
-}
+import "fmt"
 
 func main() {
-	http.HandleFunc("/", Handler)
-	log.Println("Start HTTP server on port 8081")
-	log.Fatal(http.ListenAndServe(":8081", nil))
+	defer fmt.Println("1")
+	defer fmt.Println("2")
+	defer fmt.Println("3")
+	fmt.Println("hello")
 }
